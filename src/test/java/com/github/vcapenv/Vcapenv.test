@@ -1,0 +1,15 @@
+package com.github.vcapenv;
+
+import org.junit.Test;
+import java.io.File;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.hasItems;
+
+public class VcapenvTest {
+  
+  @Test public void testLoad() {
+    Vcapenv vcapenv = new Vcapenv();
+    vcapenv.load();
+  }
+}
