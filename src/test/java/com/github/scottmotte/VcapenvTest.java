@@ -31,5 +31,4 @@ public class VcapenvTest {
     String expected2 = "ofsky";
     assertEquals(vcapenv.SENDGRID_PASSWORD(), expected2);
   }
-
 }

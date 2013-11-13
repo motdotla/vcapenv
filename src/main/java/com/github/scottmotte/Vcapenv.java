@@ -6,27 +6,29 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.JsonNode;
 
 public class Vcapenv {
-  public JsonNode node;
+  public JsonNode original_node;
+  public JsonNode current_node;
   public ObjectMapper mapper;
 
   public Vcapenv() {
-    this.node   = null; 
-    this.mapper = new ObjectMapper();
-    this.resetNode();
+    this.original_node  = null;
+    this.current_node   = null; 
+    this.mapper         = new ObjectMapper();
+    this.setNode();
   }
 
   public Vcapenv get(String key) {
-    this.node = (JsonNode)this.node.get(key);
+    this.current_node = (JsonNode)this.current_node.get(key);
     return this;
   }
 
   public Vcapenv get(Integer index) {
-    this.node = (JsonNode)this.node.get(index);
+    this.current_node = (JsonNode)this.current_node.get(index);
     return this;
   }
 
   public String toString() {
-    return this.node.toString().replace("\"", "");
+    return this.current_node.toString().replace("\"", "");
   }
 
   public String SENDGRID_USERNAME() {
@@ -40,10 +42,16 @@ public class Vcapenv {
   }
 
   public String resetNode() {
+    this.current_node = this.original_node;
+    return "reset";
+  }
+
+  public String setNode() {
     String vcap_services  = System.getenv("VCAP_SERVICES");
 
     try {
-      this.node = this.mapper.readValue(vcap_services, JsonNode.class);
+      this.original_node  = this.mapper.readValue(vcap_services, JsonNode.class);
+      this.current_node   = this.mapper.readValue(vcap_services, JsonNode.class);
     } catch(IOException e){
       e.printStackTrace();
     }
