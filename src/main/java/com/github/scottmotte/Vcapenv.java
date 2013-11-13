@@ -26,7 +26,7 @@ public class Vcapenv {
   }
 
   public String toString() {
-    return this.node.toString();
+    return this.node.toString().replace("\"", "");
   }
 
   public String SENDGRID_USERNAME() {
