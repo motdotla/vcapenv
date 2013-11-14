@@ -9,6 +9,16 @@ String sendgrid_username    = vcapenv.SENDGRID_USERNAME();
 String sendgrid_password    = vcapenv.SENDGRID_PASSWORD();
 ```
 
+## Available Methods
+
+```java
+Vcapenv vcapenv = new Vcapenv();
+vcapenv.SENDGRID_USERNAME();
+vcapenv.SENDGRID_PASSWORD();
+```
+
+Please add more by creating a [pull request](https://github.com/scottmotte/vcapenv/pulls).
+
 ## Installation
 
 There are multiple ways to install this library. I recommend using [Gradle](http://www.gradle.org/).
@@ -61,16 +71,6 @@ import com.github.scottmotte.Vcapenv;
 ### via Maven
 
 I'd like to get this on Maven. Please [+1 your support](https://github.com/scottmotte/vcapenv/issues) if you'd like to see it on Maven as well.
-
-## Available Methods
-
-```java
-Vcapenv vcapenv = new Vcapenv();
-vcapenv.SENDGRID_USERNAME();
-vcapenv.SENDGRID_PASSWORD();
-```
-
-Please add more by creating a [pull request](https://github.com/scottmotte/vcapenv/pulls).
 
 ## Testing
 
