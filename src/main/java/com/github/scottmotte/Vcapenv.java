@@ -27,6 +27,14 @@ public class Vcapenv {
     return this;
   }
 
+  public JsonNode getCurrentNode() {
+    return this.current_node;
+  }
+
+  public JsonNode getOriginalNode() {
+    return this.original_node;
+  }
+
   public String toString() {
     return this.current_node.toString().replace("\"", "");
   }
