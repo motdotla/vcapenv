@@ -62,6 +62,16 @@ import com.github.scottmotte.Vcapenv;
 
 I'd like to get this on Maven. Please [+1 your support](https://github.com/scottmotte/vcapenv/issues) if you'd like to see it on Maven as well.
 
+## Available Methods
+
+```java
+Vcapenv vcapenv = new Vcapenv();
+vcapenv.SENDGRID_USERNAME();
+vcapenv.SENDGRID_PASSWORD();
+```
+
+Please add more by creating a [pull request](https://github.com/scottmotte/vcapenv/pulls).
+
 ## Testing
 
 First set some test export environment variables.
