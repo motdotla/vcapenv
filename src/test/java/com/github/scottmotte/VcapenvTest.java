@@ -1,4 +1,4 @@
-package com.github.vcapenv;
+package com.github.scottmotte;
 
 import org.junit.Test;
 import java.io.File;
