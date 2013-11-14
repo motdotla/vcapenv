@@ -25,10 +25,12 @@ public class VcapenvTest {
   }
 
   @Test public void testSendGridUsernameAndPassword() {
-    Vcapenv vcapenv = new Vcapenv();
     String expected = "orion";
-    assertEquals(vcapenv.SENDGRID_USERNAME(), expected);
     String expected2 = "ofsky";
-    assertEquals(vcapenv.SENDGRID_PASSWORD(), expected2);
+    Vcapenv vcapenv = new Vcapenv();
+    String username = vcapenv.SENDGRID_USERNAME();
+    String password = vcapenv.SENDGRID_PASSWORD();
+    assertEquals(username, expected);
+    assertEquals(password, expected2);
   }
 }
