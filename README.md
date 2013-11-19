@@ -19,6 +19,15 @@ vcapenv.SENDGRID_PASSWORD();
 
 Please add more by creating a [pull request](https://github.com/scottmotte/vcapenv/pulls).
 
+#### Dig Deeper
+
+You can also, dig down into the VCAP_SERVICES json by doing something like this:
+
+```java
+Vcapenv vcapenv = new Vcapenv();
+vcapenv.get("sendgrid-n/a").get(0).get("credentials").get("username").toString();
+```
+
 ## Installation
 
 There are multiple ways to install this library. I recommend using [Gradle](http://www.gradle.org/).
